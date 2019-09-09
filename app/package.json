@@ -1,0 +1,27 @@
+{
+  "name": "warehouse",
+  "version": "1.0.0",
+  "description": "My spectacular Nuxt.js project",
+  "author": "yuuhi",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/vue-fontawesome": "^0.1.7",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "node-sass": "^4.12.0",
+    "nuxt": "^2.0.0",
+    "nuxt-fontawesome": "^0.4.0",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^1.0.0"
+  }
+}
