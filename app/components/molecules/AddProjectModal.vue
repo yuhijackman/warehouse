@@ -25,7 +25,7 @@
             colorName="primary"
             size="l"
             @click="addProject"
-        >Start a project</AppButton>
+        >ADD</AppButton>
       </div>
     </div>
   </div>

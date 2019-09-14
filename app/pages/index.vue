@@ -18,8 +18,8 @@
         <div class="centeral-content__middle">
           <div class="cards__box">
             <Card
-              v-for="project in projects"
-              :key="project.title"
+              v-for="(project, key, index)  in projects"
+              :key="index"
               :project="project"
             />
           </div>
