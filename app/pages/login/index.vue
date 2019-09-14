@@ -1,6 +1,5 @@
 <template>
     <div class="wrapper">
-        <Navigation />
         <div class="wrapper-login">
             <Logo />
             <form
@@ -52,7 +51,6 @@
 import AppControlInput from "@/components/UI/AppControlInput";
 import AppButton from "@/components/UI/AppButton";
 import Logo from '~/components/Logo.vue';
-import Navigation from '~/components/Header/Navigation.vue';
 
 export default {
     data() {
@@ -68,8 +66,7 @@ export default {
     components: {
         AppControlInput,
         AppButton,
-        Logo,
-        Navigation
+        Logo
     },
     methods: {
         login() {

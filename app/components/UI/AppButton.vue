@@ -53,6 +53,9 @@ export default {
     &:focus {
         outline: none;
     }
+    &:hover {
+      opacity: .8;
+    }
     border-radius: 10rem;
 
     &--l {

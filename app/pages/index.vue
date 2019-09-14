@@ -25,23 +25,31 @@
           </div>
         </div>
       </div>
-      <div class="btn-box">
-        <CircleBtn
-          colorName="primary"
-          size="m"
-          @click="openAddProjectModal"
-        >+</CircleBtn>
-      </div>
     </main>
+    <div class="btn-box">
+      <CircleBtn
+        colorName="primary"
+        size="m"
+        @click="openAddProjectModal"
+      >+</CircleBtn>
+    </div>
+    <transition name="fade">
+      <AddProjectModal
+        v-if="showAddProjectModal"
+        @submit="addProject"
+        @close="closeAddProjectModal"
+      />
+    </transition>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-import Navigation from '~/components/Header/Navigation.vue';
+import Navigation from '~/components/Organisms/Header/Navigation.vue';
 import Tab from '~/components/Main/Tab.vue';
 import Card from '~/components/Main/Card.vue';
 import CircleBtn from '~/components/UI/CircleBtn.vue';
+import AddProjectModal from '~/components/molecules/AddProjectModal.vue';
 
 export default {
   components: {
@@ -49,7 +57,8 @@ export default {
     Navigation,
     Tab,
     Card,
-    CircleBtn
+    CircleBtn,
+    AddProjectModal
   },
   data() {
     return {
@@ -94,7 +103,8 @@ export default {
           deadline: 'Mar 02',
           status: 'Active'
         }
-      ]
+      ],
+      showAddProjectModal: false
     }
   },
    methods: {
@@ -102,7 +112,13 @@ export default {
        this.activeTab = target
      },
      openAddProjectModal() {
-       console.log('add')
+       this.showAddProjectModal = true
+     },
+     addProject(data) {
+       console.log(data)
+     },
+     closeAddProjectModal() {
+       this.showAddProjectModal = false
      }
    }
 }
@@ -137,6 +153,7 @@ export default {
 .cards__box {
   display: flex;
   flex-wrap: wrap;
+  margin: -0.5rem;
 }
 
 .tab-box {
@@ -150,7 +167,14 @@ export default {
   transform: translate(50%, 0%);
 }
 
-@media (min-width: 640px) {
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+@screen sm {
   .main-wrapper {
     @apply px-12 py-20;
   }

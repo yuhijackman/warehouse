@@ -36,7 +36,7 @@ export default {
 
 
 .list-content {
-  background:#cdeed7;
+  background:rgb(232, 91, 70);
   display: flex;
   flex-direction: column;
   padding: 1em;
@@ -47,13 +47,13 @@ export default {
 	flex: 1 0 auto;
 }
 
-@media (min-width: 850px) {
+@screen sm {
   .card {
     width: 50%;
   }
 }
 
-@media (min-width: 1280px) {
+@screen xl {
   .card {
     width: 33.33%;
   }

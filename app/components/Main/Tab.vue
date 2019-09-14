@@ -46,6 +46,6 @@ export default {
 
 }
 .active {
-  border-bottom: 2px solid #55c57a;
+  border-bottom: 2px solid $color-primary;
 }
 </style>

@@ -37,8 +37,6 @@ export default {
 }
 </script>
 
-
-        <button class="add-btn">+</button>
 <style lang="scss" scoped>
 .add-btn {
     text-align: center;
