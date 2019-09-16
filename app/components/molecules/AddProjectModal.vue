@@ -21,11 +21,11 @@
         />
       </div>
       <div class="btn-field">
-        <AppButton
+        <RectangleBtn
             colorName="primary"
             size="l"
             @click="addProject"
-        >ADD</AppButton>
+        >ADD</RectangleBtn>
       </div>
     </div>
   </div>
@@ -33,15 +33,15 @@
 
 <script>
 import Label from '~/components/atoms/Label.vue';
-import BasicInput from '~/components/atoms/form/Basic.vue';
-import AppButton from "@/components/UI/AppButton";
+import BasicInput from '~/components/atoms/form/BasicInput.vue';
+import RectangleBtn from "@/components/atoms/button/RectangleBtn";
 
 export default {
   name: 'AddProjectModal',
   components: {
     Label,
     BasicInput,
-    AppButton
+    RectangleBtn
   },
   data() {
     return {

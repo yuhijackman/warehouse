@@ -48,7 +48,7 @@ import Logo from '~/components/Logo.vue'
 import Navigation from '~/components/Organisms/Header/Navigation.vue';
 import Tab from '~/components/Main/Tab.vue';
 import Card from '~/components/Main/Card.vue';
-import CircleBtn from '~/components/UI/CircleBtn.vue';
+import CircleBtn from '~/components/atoms/button/CircleBtn.vue';
 import AddProjectModal from '~/components/molecules/AddProjectModal.vue';
 
 export default {
