@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'AppButton',
+  name: 'RectangleBtn',
   props: {
     // s, m, l
     size: {

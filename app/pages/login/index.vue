@@ -5,28 +5,28 @@
             <form
                 v-if="isLogin"
                 class="login-form">
-                <AppControlInput v-model="formData.email" title="email"></AppControlInput>
-                <AppControlInput v-model="formData.password" title="password"></AppControlInput>
+                <BasicInput v-model="formData.email" title="email"></BasicInput>
+                <BasicInput v-model="formData.password" title="password"></BasicInput>
                 <div class="btn-field">
-                    <AppButton
+                    <RectangleBtn
                         colorName="primary"
                         size="l"
                         @click="login"
-                    >Sign in</AppButton>
+                    >Sign in</RectangleBtn>
                 </div>
             </form>
             <form
                 v-if="!isLogin"
                 class="login-form">
-                <AppControlInput v-model="formData.name" title="name"></AppControlInput>
-                <AppControlInput v-model="formData.email" title="email"></AppControlInput>
-                <AppControlInput v-model="formData.password" title="password"></AppControlInput>
+                <BasicInput v-model="formData.name" title="name"></BasicInput>
+                <BasicInput v-model="formData.email" title="email"></BasicInput>
+                <BasicInput v-model="formData.password" title="password"></BasicInput>
                 <div class="btn-field">
-                    <AppButton
+                    <RectangleBtn
                         colorName="primary"
                         size="l"
                         @click="signup"
-                    >Sign up</AppButton>
+                    >Sign up</RectangleBtn>
                 </div>
             </form>
         </div>
@@ -48,8 +48,8 @@
 </template>
 
 <script>
-import AppControlInput from "@/components/UI/AppControlInput";
-import AppButton from "@/components/UI/AppButton";
+import BasicInput from '~/components/atoms/form/BasicInput.vue';
+import RectangleBtn from "@/components/atoms/button/RectangleBtn";
 import Logo from '~/components/Logo.vue';
 
 export default {
@@ -64,8 +64,8 @@ export default {
         }
     },
     components: {
-        AppControlInput,
-        AppButton,
+        BasicInput,
+        RectangleBtn,
         Logo
     },
     methods: {

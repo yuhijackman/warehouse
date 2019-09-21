@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Item from '~/components/atoms/Dropdown/Item'
+import Item from '~/components/atoms/dropdown/Item'
 
 export default {
   name: 'DropdownForNav',
