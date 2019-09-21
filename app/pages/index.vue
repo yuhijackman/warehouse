@@ -26,7 +26,9 @@
         </div>
       </div>
     </main>
-    <div class="btn-box">
+    <div
+      v-if="!showAddProjectModal"
+      class="btn-box">
       <CircleBtn
         colorName="primary"
         size="m"
@@ -40,6 +42,9 @@
         @close="closeAddProjectModal"
       />
     </transition>
+    <li v-for="post in projectss" v-bind:key="post.id">
+        {{post.title}}
+    </li>
   </div>
 </template>
 
@@ -50,6 +55,9 @@ import Tab from '~/components/Main/Tab.vue';
 import Card from '~/components/Main/Card.vue';
 import CircleBtn from '~/components/atoms/button/CircleBtn.vue';
 import AddProjectModal from '~/components/molecules/AddProjectModal.vue';
+import firebase from "~/plugins/firebase.js";
+import { mapGetters } from 'vuex';
+const db = firebase.firestore();
 
 export default {
   components: {
@@ -107,6 +115,12 @@ export default {
       showAddProjectModal: false
     }
   },
+  created: function () {
+    this.$store.dispatch('setProjectsRef', db.collection('projects'))
+  },
+  computed: {
+    ...mapGetters({ projectss: 'getProjects' })
+  },
    methods: {
      activateTab(target) {
        this.activeTab = target
@@ -115,7 +129,15 @@ export default {
        this.showAddProjectModal = true
      },
      addProject(data) {
-       console.log(data)
+       const project = {
+         title: data.title,
+         deadline: data.deadline,
+         git_url: data.git_url,
+         site_url: data.site_url,
+       }
+       const projectsRef = db.collection('projects')
+       projectsRef.add(project)
+       this.closeAddProjectModal
      },
      closeAddProjectModal() {
        this.showAddProjectModal = false

@@ -16,8 +16,12 @@
           title="Deadline"
         />
         <BasicInput
-          v-model="formData.giturl"
+          v-model="formData.git_url"
           title="Git URL"
+        />
+        <BasicInput
+          v-model="formData.site_url"
+          title="Site URL"
         />
       </div>
       <div class="btn-field">
@@ -48,7 +52,8 @@ export default {
       formData: {
         title: '',
         deadline: '',
-        giturl: ''
+        git_url: '',
+        site_url: ''
       }
     }
   },
